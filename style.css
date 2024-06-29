@@ -65,87 +65,31 @@ h2 {
   margin-bottom: 20px;
 }
 
-.features {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 40px; /* Add space after features section */
-}
+/* New layout styles */
 
-.feature {
+.key-features {
   text-align: center;
-  width: 30%; /* Adjust width as needed for 3 features per row */
-  margin-bottom: 20px;
+  margin: 40px 0; /* Center and add space above and below */
 }
 
-.feature img {
-  width: 100%;
-  height: 150px; /* Adjust height as needed */
-  object-fit: cover;
-  margin-bottom: 10px;
+.features-container {
+  display: inline-block; /* Allow text to wrap around content */
+  max-width: 80%; /* Limit width for responsiveness */
+  text-align: left; /* Align text to the left */
 }
 
-.feature h3 {
-  font-size: 1.5em;
-  margin-bottom: 5px;
+.product-container {
+  display: flex; /* Arrange products horizontally */
+  justify-content: space-around; /* Distribute evenly */
+  margin-top: 40px; /* Add space above */
 }
 
-.feature p {
-  font-size: 14px;
-}
-
-#about {
-  padding-bottom: 40px; /* Add space before video section */
-}
-
-.video-section {
+.product {
   text-align: center;
+  margin: 10px; /* Add space between products */
 }
 
-.video-section iframe {
-  margin: 0 auto; /* Center the video horizontally */
-}
-
-#products-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.product-card {
-  width: 25%;
-  border: 1px solid #ddd;
-  padding: 10px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.product-card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.product-card h3 {
-  margin-top: 10px;
-  margin-bottom: 5px;
-}
-
-.product-card p {
-  font-size: 14px;
-  margin-bottom: 0;
-}
-
-.deployed-app-button {
-  display: block;
-  background-color: #4CAF50; /* Green */
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-}
-
-/* New CSS for responsive images */
+/* Responsive image styles (unchanged) */
 
 .responsive-image {
   max-width: 100%; /* Ensure images scale responsively */
