@@ -40,7 +40,7 @@ a {
 }
 
 .banner-image {
-  width: 50%; /* Adjust width as needed */
+  max-width: 80%; /* Set a maximum width for responsiveness */
   height: auto; /* Maintain aspect ratio */
   object-fit: contain; /* Ensure entire image is displayed */
   margin-bottom: 20px; /* Add space between image and text */
@@ -99,7 +99,5 @@ h2 {
   background-color: #4CAF50; /* Green */
   color: white;
   padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-}
+  text-
 
