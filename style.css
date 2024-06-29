@@ -12,12 +12,15 @@ header {
 .hero {
   text-align: center;
   padding: 50px 0;
+  display: flex; /* Make the hero section flexible for centering */
+  justify-content: center; /* Center the content horizontally */
+  align-items: center; /* Center the content vertically */
 }
 
-.hero img {
-  width: 100%;
-  max-width: 700px; /* Adjust as needed */
-  object-fit: cover;
+.banner-image {
+  width: 80%; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensure entire image is displayed */
 }
 
 h1 {
@@ -93,8 +96,5 @@ h2 {
   display: block;
   background-color: #4CAF50; /* Green */
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline
+  padding: 15px 32
 
