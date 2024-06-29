@@ -4,24 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oja Agbe Harvestify</title>
-  <link rel="stylesheet" href="style.css"> </head>
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
   <header>
-    <h1>Oja Agbe Harvestify</h1>
+    <section class="hero">
+      <img src="oja.png" alt="Oja Agbe Harvestify Banner">  <h1>Oja Agbe Harvestify</h1>
+      <p>Connecting farmers directly to consumers for a better harvest.</p>
+    </section>
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">About Us</a></li>
-        <li id="login-link"><a href="#">Login</a></li> <li id="profile-link" style="display: none;"><a href="#">Profile</a></li> <li id="follow-link" style="display: none;">Following</a></li> </ul>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li id="login-link"><a href="#">Login</a></li>
+        <li id="profile-link" style="display: none;"><a href="#">Profile</a></li>
+        <li id="follow-link" style="display: none;">Following</a></li>
+      </ul>
     </nav>
   </header>
 
   <main>
-    <h2>Products</h2>
-    <section id="products-container"></section>
+    <section id="products">
+      <h2>Products</h2>
+      <section id="products-container"></section>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+    </section>
   </main>
 
-  <script src="script.js"></script> </body>
+  <a href="deployed-app-link" class="deployed-app-button">View Deployed App</a>
+  <script src="script.js"></script>
+</body>
 </html>
 
