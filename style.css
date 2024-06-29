@@ -1,5 +1,4 @@
-
-dy {
+body {
   font-family: sans-serif;
   margin: 0;
   padding: 0;
@@ -65,18 +64,20 @@ h2 {
   margin-bottom: 20px;
 }
 
-/* New layout styles */
+/* Key features styles */
 
 .key-features {
   text-align: center;
   margin: 40px 0; /* Center and add space above and below */
 }
 
-.features-container {
-  display: inline-block; /* Allow text to wrap around content */
-  max-width: 80%; /* Limit width for responsiveness */
-  text-align: left; /* Align text to the left */
+.key-features p {
+  font-size: 14px; /* Adjust font size for readability */
+  line-height: 1.5; /* Improve spacing between lines */
+  margin-bottom: 20px; /* Add space after description */
 }
+
+/* Product container styles (unchanged) */
 
 .product-container {
   display: flex; /* Arrange products horizontally */
