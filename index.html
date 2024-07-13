@@ -10,11 +10,7 @@
   <header>
     <nav>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#about">About Us</a></li>
-        <li id="login-link"><a href="#login">Login</a></li>
-      </ul>
+        <li><a href="index.html"><img src="home-icon.png" alt="Home Icon"></a></li>  <li><a href="products.html"><img src="products-icon.png" alt="Products Icon"></a></li>  <li><a href="about-us.html"><img src="about-icon.png" alt="About Us Icon"></a></li>  <li id="login-link"><a href="login.php"><img src="login-icon.png" alt="Login Icon"></a></li>  </ul>
     </nav>
     <section class="hero">
       <img src="oja.png" alt="Oja Agbe Harvestify Banner" class="banner-image">
@@ -36,18 +32,30 @@
     </section>
 
     <section id="products">
-      <?php include 'products.php'; ?>
+      <h2>Products</h2>
+      <div class="product-container">
+        <div class="product">
+          <img src="feature1-image.jpg" alt="Layer Birds" class="responsive-image">
+          <h3>Sell Spent Layers (Birds)</h3>
+          <p>Maximize profits for your hens.</p>
+        </div>
+        <div class="product">
+          <img src="feature2-image.jpg" alt="Cassava" class="responsive-image">
+          <h3>Sell Fresh Cassava</h3>
+          <p>Skip middlemen, get the best price.</p>
+        </div>
+        <div class="product">
+          <img src="feature3-image.jpg" alt="Mature Pig" class="responsive-image">
+          <h3>Sell Market-Ready Pigs</h3>
+          <p>Secure top dollar with ease.</p>
+        </div>
+      </div>
     </section>
 
-    <section id="about">
-      <?php include 'about.php'; ?>
-    </section>
-
-    <section id="login">
-      <?php include 'login.php'; ?>
-    </section>
   </main>
 
+  <a href="deployed-app-link" class="deployed-app-button">View Deployed App</a>
   <script src="script.js"></script>
 </body>
 </html>
+
