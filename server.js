@@ -1,123 +1,48 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const multer = require('multer');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const cors = require('cors'); // Enable CORS if needed
+// Add smooth scrolling to navigation links
+const navLinks = document.querySelectorAll('nav a');
 
-// Replace with your MongoDB connection string
-const mongoURI = 'mongodb://localhost:27017/oja-agbe-harvestify';
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault(); // Prevent default anchor link behavior
 
-const app = express();
-const port = process.env.PORT || 5000;
+    const targetSection = document.getElementById(this.getAttribute('href').slice(1)); // Get target section ID
 
-// Connect to MongoDB
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error(err));
-
-// Define the product schema
-const productSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  description: {
-    type: String
-  },
-  price: {
-    type: Number,
-    required: true
-  },
-  category: {
-    type: String
-  },
-  imageUrl: {
-    type: String // Replace with actual image storage logic (e.g., cloud storage)
-  },
-  supplier: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Supplier'
-  }
+    if (targetSection) {
+      smoothScroll(targetSection);
+    }
+  });
 });
 
-const Product = mongoose.model('Product', productSchema);
+function smoothScroll(targetSection) {
+  const targetY = targetSection.offsetTop; // Get target section's Y position
+  const startPosition = window.pageYOffset; // Get current scroll position
 
-// Define the supplier schema
-const supplierSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true
-  },
-  email: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  password: {
-    type: String,
-    required: true
-  },
-  following: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Supplier'
-  }]
-});
+  let distance = targetY - startPosition;
+  let startTime = null;
 
-// Hash password before saving a supplier
-supplierSchema.pre('save', async function(next) {
-  if (!this.isModified('password')) {
-    next();
-  }
-
-  const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
-  next();
-});
-
-const Supplier = mongoose.model('Supplier', supplierSchema);
-
-// Middleware for parsing JSON data and uploading images (replace with actual storage)
-app.use(express.json());
-app.use(cors()); // Enable CORS if needed
-
-const upload = multer({ dest: 'uploads/' }); // Temporary image storage
-
-// Route to register a new supplier
-app.post('/register', async (req, res) => {
-  const { name, email, password } = req.body;
-
-  try {
-    const existingSupplier = await Supplier.findOne({ email });
-    if (existingSupplier) {
-      return res.status(400).json({ message: 'Email already exists' });
+  const animation = () => {
+    if (startTime === null) {
+      startTime = performance.now();
     }
 
-    const newSupplier = new Supplier({ name, email, password });
-    await newSupplier.save();
+    const time = performance.now() - startTime;
+    const ease = Math.easeInOutQuad(time, startPosition, distance, 500); // Adjust duration as needed
 
-    res.json({ message: 'Registration successful' });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Server Error' });
-  }
-});
+    window.scrollTo(0, ease);
 
-// Route to login a supplier
-app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  try {
-    const supplier = await Supplier.findOne({ email });
-    if (!supplier) {
-      return res.status(401).json({ message: 'Invalid credentials' });
+    if (Math.round(ease) !== Math.round(distance)) {
+      window.requestAnimationFrame(animation);
     }
+  };
 
-    const isMatch = await bcrypt.compare(password, supplier.password);
-    if (!isMatch) {
-      return res.status(401).json({ message: 'Invalid credentials' });
-    }
+  window.requestAnimationFrame(animation);
+}
 
-    // Generate JWT token
-    const token = jwt.sign({ supplierId: supplier._id }, process.env.JWT_SECRET,
+// Math.easeInOutQuad function (for smooth scrolling animation)
+Math.easeInOutQuad = function easeInOutQuad(t, b, c, d) {
+  t /= d / 2;
+  if (t < 1) return c / 2 * t * t + b;
+  t--;
+  return -c / 2 * (t * (t - 2) - 1) + b;
+};
 
