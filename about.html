@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Oja Agbe Harvestify</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #007BFF;
+            padding: 10px;
+            color: white;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+        }
+
+        nav ul li a img {
+            height: 24px;
+            width: 24px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #007BFF;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* About Us Page Styling */
+        .about-section {
+            padding: 40px 20px;
+            background-color: #ffffff;
+            max-width: 1200px;
+            margin: 0 auto;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .about-section p {
+            font-size: 1.2em;
+            line-height: 1.6em;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .about-section .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 40px;
+        }
+
+        .team-member {
+            max-width: 30%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-member img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #777;
+        }
+
+        .team-member .social-icons img {
+            width: 24px;
+            height: 24px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/"><img src="home-icon.png" alt="Home"></a></li>
+                <li><a href="/products"><img src="products-icon.png" alt="Products"></a></li>
+                <li><a href="/about"><img src="about-icon.png" alt="About Us"></a></li>
+                <li><a href="/login"><img src="login-icon.png" alt="Login"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="about-section">
+            <h1>About Oja Agbe Harvestify</h1>
+            <p>Oja Agbe Harvestify is an innovative platform dedicated to empowering farmers by connecting them directly with consumers and buyers. Our mission is to eliminate middlemen, ensuring that farmers receive the best possible price for their hard work, while also providing consumers with access to fresh, high-quality agricultural products.</p>
+
+            <p>Founded in 2024, we have grown rapidly to become a trusted name in the agricultural marketplace. Our platform not only helps farmers sell their products more efficiently, but also offers a variety of tools and resources designed to optimize their farming operations, from crop management tips to market insights.</p>
+
+            <p>At Oja Agbe Harvestify, we believe in the power of technology to transform agriculture and improve the lives of farmers. We are committed to fostering sustainable farming practices, promoting fair trade, and supporting rural communities by creating new opportunities and expanding access to markets.</p>
+
+            <p>Join us on our journey to revolutionize agriculture and build a more equitable and sustainable food system for all.</p>
+
+            <div class="team-container">
+                <div class="team-member">
+                    <img src="ola.jpg" alt="Founder Image">
+                    <h3>Wahab Olayinka</h3>
+                    <p>Founder & CEO</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="cofounder.jpg" alt="Co-Founder Image">
+                    <h3>Tunde Yusuf</h3>
+                    <p>Co-Founder & COO</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="cto.jpg" alt="CTO Image">
+                    <h3>Taofeek samuel</h3>
+                    <p>Chief Technology Officer</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Oja Agbe Harvestify</p>
+    </footer>
+
+    <script>
+        // Potential JavaScript for enhancing the About Us page, such as animations or dynamic content loading.
+        document.addEventListener("DOMContentLoaded", function() {
+            // Example: Alert when clicking on a team member's profile
+            document.querySelectorAll('.team-member').forEach(member => {
+                member.addEventListener('click', function() {
+                    alert('More details about this team member coming soon.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+

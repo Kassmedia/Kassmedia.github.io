@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+CTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,10 +10,10 @@
   <header>
     <nav>
       <ul>
-        <li><a href="index.html"><img src="home-icon.png" alt="Home Icon"></a></li>
-        <li><a href="products.html"><img src="products-icon.png" alt="Products Icon"></a></li>
-        <li><a href="about-us.html"><img src="about-icon.png" alt="About Us Icon"></a></li>
-        <li id="login-link"><a href="login.html"><img src="login-icon.png" alt="Login Icon"></a></li>
+        <li><a href="/"><img src="home-icon.png" alt="Home"></a></li>
+        <li><a href="/products"><img src="products-icon.png" alt="Products"></a></li>
+        <li><a href="/about"><img src="about-icon.png" alt="About Us"></a></li>
+        <li><a href="/login"><img src="login-icon.png" alt="Login"></a></li>
       </ul>
     </nav>
   </header>
@@ -21,7 +21,7 @@
   <main>
     <section class="login-form">
       <h2>Login to Oja Agbe Harvestify</h2>
-      <form action="YOUR_SERVER_SIDE_SCRIPT.php" method="POST">
+      <form action="/login" method="POST">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" placeholder="Enter your username" required>
         <label for="password">Password:</label>
@@ -31,7 +31,12 @@
     </section>
   </main>
 
+  <footer>
+    <p>&copy; 2024 Oja Agbe Harvestify</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
+
 

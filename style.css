@@ -1,149 +1,101 @@
 body {
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-  }
-  
-  nav {
-    background-color: #f0f0f0;
-    padding: 20px;
-    display: flex; /* Make navigation horizontal */
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  nav li {
-    display: inline-block;
-    margin-right: 20px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #333;
-  }
-  
-  .hero {
-    text-align: center;
-    padding: 20px; /* Adjust padding to avoid overlapping */
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center content horizontally */
-  }
-  
-  .banner-image {
-    max-width: 80%; /* Set a maximum width for responsiveness */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: contain; /* Ensure entire image is displayed */
-    margin-bottom: 20px; /* Add space between image and text */
-  }
-  
-  h1 {
-    font-size: 2em;
-    margin-bottom: 10px;
-  }
-  
-  p {
-    font-size: 1.2em;
-  }
-  
-  main {
-    padding: 20px;
-  }
-  
-  h2 {
-    text-align: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Key features styles */
-  
-  .key-features {
-    text-align: center;
-    margin: 40px 0; /* Center and add space above and below */
-  }
-  
-  .key-features p {
-    font-size: 14px; /* Adjust font size for readability */
-    line-height: 1.5; /* Improve spacing between lines */
-    margin-bottom: 20px; /* Add space after description */
-  }
-  
-  /* Product container styles */
-  
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+header {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 0;
+  list-style: none;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #007BFF;
+}
+
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('banner.jpg') center/cover;
+  color: white;
+}
+
+.banner-image {
+  max-width: 100%;
+  height: auto;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.key-features, #products {
+  padding: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.product {
+  flex: 1 1 30%;
+  max-width: 30%;
+  text-align: center;
+  margin: 20px 10px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #333;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
   .product-container {
-    display: flex; /* Arrange products horizontally */
-    justify-content: space-around; /* Distribute evenly */
-    margin-top: 40px; /* Add space above */
+    flex-direction: column;
   }
-  
+
   .product {
-    text-align: center;
-    margin: 10px; /* Add space between products */
+    max-width: 100%;
   }
-  
-  /* Responsive image styles */
-  
-  .responsive-image {
-    max-width: 100%; /* Ensure images scale responsively */
-    height: auto; /* Maintain aspect ratio */
-    object-fit: cover;
-  }
-  
-  /* Sections */
-  
-  section {
-    margin-bottom: 40px; /* Add space between sections */
-  }
-  
-  /* About Us section */
-  
-  #about p {
-    text-align: justify; /* Justify text for better readability */
-  }
-  
-  /* Login section (placeholder styles) */
-  
-  #login {
-    text-align: center;
-  }
-  
-  #login form {
-    margin: 20px auto;
-    width: 300px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  #login label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  #login input[type="text"],
-  #login input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    margin-bottom: 15px;
-  }
-  
-  #login input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
+}
+
