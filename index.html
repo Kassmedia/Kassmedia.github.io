@@ -4,17 +4,142 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Oja Agbe Harvestify</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Include Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    nav ul li a img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 5px;
+    }
+    .hero {
+      text-align: center;
+      padding: 20px;
+    }
+    .hero .banner-image {
+      width: 120px; /* Adjusted to be smaller */
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .hero h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .key-features {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .key-features h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+    .key-features ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .key-features ul li {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+    .product-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .product {
+      background-color: white;
+      padding: 20px;
+      margin: 10px;
+      width: calc(33% - 40px);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      border-radius: 10px;
+    }
+    .product img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    .product h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .product p {
+      font-size: 1.1em;
+      color: #555;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .product {
+        width: calc(50% - 40px);
+      }
+    }
+    @media (max-width: 480px) {
+      .product {
+        width: calc(100% - 40px);
+      }
+    }
+  </style>
 </head>
 <body>
+
   <header>
     <nav>
       <ul>
-        <li><a href="index.html"><img src="home-icon.png" alt="Home"></a></li>
-        <li><a href="product.html"><img src="products-icon.png" alt="Products"></a></li>
-	<li><a href="contact.html"><img src="contact.png" alt="Contact us"></a></li>
-        <li><a href="about.html"><img src="about-icon.png" alt="About Us"></a></li>
-        <li><a href="login.html"><img src="login-icon.png" alt="Login"></a></li>
+        <li><a href="index.html"><img src="home-icon.png" alt="Home">Home</a></li>
+        <li><a href="product.html"><img src="products-icon.png" alt="Products">Products</a></li>
+        <li><a href="contact.html"><img src="contact.png" alt="Contact Us">Contact Us</a></li>
+        <li><a href="about.html"><img src="about-icon.png" alt="About Us">About Us</a></li>
+        <li><a href="login.html"><img src="login-icon.png" alt="Login">Login</a></li>
       </ul>
     </nav>
     <section class="hero">
@@ -55,7 +180,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer>

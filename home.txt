@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Oja Agbe Harvestify</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html"><img src="home-icon.png" alt="Home"></a></li>
+        <li><a href="product.html"><img src="products-icon.png" alt="Products"></a></li>
+	<li><a href="contact.html"><img src="contact.png" alt="Contact us"></a></li>
+        <li><a href="about.html"><img src="about-icon.png" alt="About Us"></a></li>
+        <li><a href="login.html"><img src="login-icon.png" alt="Login"></a></li>
+      </ul>
+    </nav>
+    <section class="hero">
+      <img src="oja.png" alt="Oja Agbe Harvestify Banner" class="banner-image">
+      <h1>Oja Agbe Harvestify</h1>
+      <p>Connecting farmers directly to consumers for a better harvest.</p>
+    </section>
+  </header>
+
+  <main>
+    <section class="key-features">
+      <h2>Our Key Features</h2>
+      <p>Oja Agbe Harvestify empowers Nigerian farmers to streamline the selling process for their agricultural products.</p>
+      <ul>
+        <li>Sell Spent Layers (Birds)</li>
+        <li>Sell Fresh Cassava</li>
+        <li>Sell Market-Ready Pigs</li>
+      </ul>
+    </section>
+
+    <section id="products">
+      <h2>Products</h2>
+      <div class="product-container">
+        <div class="product">
+          <img src="layer-birds.jpg" alt="Layer Birds" class="responsive-image">
+          <h3>Sell Spent Layers (Birds)</h3>
+          <p>Maximize profits for your hens.</p>
+        </div>
+        <div class="product">
+          <img src="cassava.jpg" alt="Cassava" class="responsive-image">
+          <h3>Sell Fresh Cassava</h3>
+          <p>Skip middlemen, get the best price.</p>
+        </div>
+        <div class="product">
+          <img src="mature-pig.jpg" alt="Mature Pig" class="responsive-image">
+          <h3>Sell Market-Ready Pigs</h3>
+          <p>Secure top dollar with ease.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Oja Agbe Harvestify</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
