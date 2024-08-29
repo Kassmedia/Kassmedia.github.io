@@ -1,10 +1,18 @@
 // Smooth scrolling for navigation
 document.querySelectorAll('nav a').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+    const href = this.getAttribute('href');
+
+    // Check if the link is an internal anchor link (starts with #)
+    if (href.startsWith('#')) {
+      e.preventDefault();
+      document.querySelector(href).scrollIntoView({
+        behavior: 'smooth'
+      });
+    } else {
+      // For external links or links to different pages, allow the default behavior
+      window.location.href = href;
+    }
   });
 });
 
@@ -29,3 +37,4 @@ function loadProducts() {
 }
 
 document.addEventListener('DOMContentLoaded', loadProducts);
+
