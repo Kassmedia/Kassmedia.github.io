@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Oja Agbe</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+
+        /* Styles specific to the Contact Us page */
+        .contact-hero {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f3f3f3;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+
+        .contact-details, .contact-form {
+            width: 45%;
+            min-width: 280px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .contact-details p {
+            margin: 10px 0;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form label {
+            margin: 10px 0 5px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #218838;
+        }
+
+        .map {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .map iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            border: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-details, .contact-form {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Oja Agbe</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <h2>Contact Us</h2>
+            <p>We'd love to hear from you! Reach out to us with any inquiries, feedback, or partnership opportunities.</p>
+        </section>
+
+        <section class="contact-info">
+            <div class="contact-details">
+                <h3>Get in Touch</h3>
+                <p><strong>Email:</strong> contact@ojaagbe.com</p>
+                <p><strong>Phone:</strong> +234 800 123 4567</p>
+                <p><strong>Address:</strong> 123 Agricultural Lane, Lagos, Nigeria</p>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form action="#" method="post">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="map">
+            <h3>Our Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0194546922924!2d-122.41941558468157!3d37.77492927975919!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808f74b3bf11%3A0x8d743ed0e6af4738!2sSan+Francisco%2C+CA%2C+USA!5e0!3m2!1sen!2sng!4v1639075463832!5m2!1sen!2sng" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Oja Agbe. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
