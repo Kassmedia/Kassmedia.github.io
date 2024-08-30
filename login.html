@@ -15,10 +15,38 @@
     body {
       font-family: Arial, sans-serif;
       background-color: #f7f7f7;
+    }
+
+    nav {
+      background-color: #3f51b5;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
       display: flex;
       justify-content: center;
+      gap: 20px;
+    }
+
+    nav ul li {
+      display: inline;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      height: 100vh;
+    }
+
+    nav ul li a img {
+      width: 24px;
+      height: 24px;
+      margin-bottom: 5px;
     }
 
     .auth-container {
@@ -26,6 +54,7 @@
       width: 100%;
       max-width: 400px;
       padding: 20px;
+      margin: 20px auto;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       text-align: center;
@@ -121,6 +150,16 @@
 </head>
 <body>
 
+  <nav>
+    <ul>
+      <li><a href="index.html"><img src="home.png" alt="Home Icon">Home</a></li>
+      <li><a href="product.html"><img src="product.png" alt="Products Icon">Products</a></li>
+      <li><a href="contact.html"><img src="contact.png" alt="Contact Us Icon">Contact Us</a></li>
+      <li><a href="about.html"><img src="about.png" alt="About Us Icon">About Us</a></li>
+      <li><a href="login.html"><img src="login.png" alt="Login Icon">Login</a></li>
+    </ul>
+  </nav>
+
   <div class="auth-container">
     <h1 id="form-title">Login to Oja Agbe</h1>
 
@@ -148,7 +187,7 @@
     </form>
 
     <div class="social-login">
-      <button class="twitter"><img src="twitter.png" alt="Google Icon"> Sign in with Twitter</button>
+      <button class="twitter"><img src="twitter.png" alt="Google Icon"> Sign in with X</button>
       <button class="facebook"><img src="facebook.png" alt="Facebook Icon"> Sign in with Facebook</button>
     </div>
   </div>
