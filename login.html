@@ -1,42 +1,189 @@
-CTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oja Agbe Harvestify - Login</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Oja Agbe Harvestify - Login/Sign Up</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .auth-container {
+      background-color: #ffffff;
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .auth-container h1 {
+      color: #3f51b5;
+      margin-bottom: 20px;
+    }
+
+    .auth-container form {
+      display: none;
+      flex-direction: column;
+    }
+
+    .auth-container form.active {
+      display: flex;
+    }
+
+    .auth-container input[type="text"],
+    .auth-container input[type="email"],
+    .auth-container input[type="password"] {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    .auth-container input[type="submit"] {
+      background-color: #3f51b5;
+      color: #ffffff;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+    }
+
+    .auth-container input[type="submit"]:hover {
+      background-color: #2c3e99;
+    }
+
+    .auth-container .link-container {
+      margin-top: 15px;
+    }
+
+    .auth-container .link-container a {
+      text-decoration: none;
+      color: #3f51b5;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .auth-container .link-container a:hover {
+      text-decoration: underline;
+    }
+
+    .social-login {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .social-login button {
+      width: 48%;
+      padding: 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #ddd;
+    }
+
+    .social-login button img {
+      width: 20px;
+      margin-right: 10px;
+    }
+
+    .social-login button.google {
+      background-color: #db4437;
+      color: #fff;
+    }
+
+    .social-login button.facebook {
+      background-color: #4267b2;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="/"><img src="home-icon.png" alt="Home"></a></li>
-        <li><a href="/products"><img src="products-icon.png" alt="Products"></a></li>
-        <li><a href="/about"><img src="about-icon.png" alt="About Us"></a></li>
-        <li><a href="/login"><img src="login-icon.png" alt="Login"></a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section class="login-form">
-      <h2>Login to Oja Agbe Harvestify</h2>
-      <form action="/login" method="POST">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="Enter your username" required>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-        <button type="submit">Login</button>
-      </form>
-    </section>
-  </main>
+  <div class="auth-container">
+    <h1 id="form-title">Login to Oja Agbe</h1>
 
-  <footer>
-    <p>&copy; 2024 Oja Agbe Harvestify</p>
-  </footer>
+    <!-- Login Form -->
+    <form id="loginForm" class="active" action="dashboard.html" method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="submit" value="Login">
+      <div class="link-container">
+        <p>Don't have an account? <a id="showSignUp">Sign up here</a></p>
+        <p>Forgot your password? <a href="reset-password.html">Reset it here</a></p>
+      </div>
+    </form>
 
-  <script src="script.js"></script>
+    <!-- Sign-Up Form -->
+    <form id="signupForm" action="welcome.html" method="POST">
+      <input type="text" name="fullname" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Password" required>
+      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+      <input type="submit" value="Sign Up">
+      <div class="link-container">
+        <p>Already have an account? <a id="showLogin">Login here</a></p>
+      </div>
+    </form>
+
+    <div class="social-login">
+      <button class="google"><img src="google-icon.png" alt="Google Icon"> Sign in with Google</button>
+      <button class="facebook"><img src="facebook-icon.png" alt="Facebook Icon"> Sign in with Facebook</button>
+    </div>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const signupForm = document.getElementById('signupForm');
+    const formTitle = document.getElementById('form-title');
+    const showSignUp = document.getElementById('showSignUp');
+    const showLogin = document.getElementById('showLogin');
+
+    showSignUp.addEventListener('click', () => {
+      loginForm.classList.remove('active');
+      signupForm.classList.add('active');
+      formTitle.textContent = 'Sign Up for Oja Agbe';
+    });
+
+    showLogin.addEventListener('click', () => {
+      signupForm.classList.remove('active');
+      loginForm.classList.add('active');
+      formTitle.textContent = 'Login to Oja Agbe';
+    });
+
+    // Basic form validation for sign-up
+    signupForm.addEventListener('submit', function(e) {
+      const password = signupForm.querySelector('input[name="password"]').value;
+      const confirmPassword = signupForm.querySelector('input[name="confirm_password"]').value;
+
+      if (password !== confirmPassword) {
+        e.preventDefault();
+        alert('Passwords do not match.');
+      }
+    });
+  </script>
+
 </body>
 </html>
-
 
