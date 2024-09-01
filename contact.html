@@ -137,6 +137,24 @@
                 width: 100%;
             }
         }
+
+        /* Feedback message styles */
+        #form-feedback {
+            display: none;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+
+        #form-feedback.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        #form-feedback.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
     </style>
 </head>
 <body>
@@ -169,7 +187,7 @@
 
             <div class="contact-form">
                 <h3>Send Us a Message</h3>
-                <form action="#" method="post">
+                <form id="contact-form" method="POST">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required>
 
@@ -181,6 +199,9 @@
 
                     <button type="submit">Send Message</button>
                 </form>
+
+                <!-- Feedback message -->
+                <div id="form-feedback" class="success"></div>
             </div>
         </section>
 
@@ -193,6 +214,46 @@
     <footer>
         <p>&copy; 2024 Oja Agbe. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            const form = event.target;
+            const formData = new FormData(form);
+            const feedback = document.getElementById('form-feedback');
+
+            // Set your Formspree form ID here
+            const formspreeFormId = https://formspree.io/f/xnnawelb;
+            const formActionUrl = `https://formspree.io/f/${formspreeFormId}`;
+
+            fetch(formActionUrl, {
+                method: form.method,
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    feedback.textContent = 'Message sent successfully!';
+                    feedback.classList.add('success');
+                    feedback.classList.remove('error');
+                    form.reset(); // Clear the form
+                } else {
+                    feedback.textContent = 'Failed to send the message. Please try again.';
+                    feedback.classList.add('error');
+                    feedback.classList.remove('success');
+                }
+                feedback.style.display = 'block';
+            }).catch(error => {
+                feedback.textContent = 'An error occurred. Please try again later.';
+                feedback.classList.add('error');
+                feedback.classList.remove('success');
+                feedback.style.display = 'block';
+            });
+        });
+    </script>
+
 </body>
 </html>
 
