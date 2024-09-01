@@ -176,6 +176,56 @@
         .product-link:hover {
             text-decoration: underline;
         }
+
+        /* New Styling for Product Listing Form */
+        .product-listing {
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .product-listing h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .product-listing form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-listing label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .product-listing input,
+        .product-listing textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .product-listing button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-listing button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -183,9 +233,9 @@
         <nav>
             <ul>
                 <li><a href="/"><img src="home.png" alt="Home">Home</a></li>
-                <li><a href="/products"><img src="product.png" alt="Products"></a>Product</li>
-                <li><a href="/about"><img src="about.png" alt="About Us"></a>About us</li>
-                <li><a href="/login"><img src="login.png" alt="Login"></a>Login</li>
+                <li><a href="/products"><img src="product.png" alt="Products">Product</a></li>
+                <li><a href="/about"><img src="about.png" alt="About Us">About us</a></li>
+                <li><a href="/login"><img src="login.png" alt="Login">Login</a></li>
             </ul>
         </nav>
     </header>
@@ -222,6 +272,25 @@
             </ol>
         </section>
 
+        <section class="product-listing">
+            <h2>List Your Product</h2>
+            <form id="product-listing-form">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" name="product-name" required>
+
+                <label for="product-description">Product Description:</label>
+                <textarea id="product-description" name="product-description" rows="4" required></textarea>
+
+                <label for="product-price">Price:</label>
+                <input type="text" id="product-price" name="product-price" required>
+
+                <label for="product-image">Product Image URL:</label>
+                <input type="text" id="product-image" name="product-image" required>
+
+                <button type="submit">Submit Product</button>
+            </form>
+        </section>
+
         <section class="related-products">
             <h2>Related Products</h2>
             <div class="product-container">
@@ -246,14 +315,41 @@
     </footer>
 
     <script>
-        // Example: Expand the product details on user interaction (not necessary, but could enhance UX)
-        document.querySelectorAll('.product-link').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                alert('More details will be shown here.');
-                // You can expand this to dynamically load or navigate to more product details
-            });
+        // Example: Handle form submission for listing a product
+        document.getElementById('product-listing-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            
+            // Collect form data
+            const productName = document.getElementById('product-name').value;
+            const productDescription = document.getElementById('product-description').value;
+            const productPrice = document.getElementById('product-price').value;
+            const productImage = document.getElementById('product-image').value;
+
+            // Example: Displaying the form data (In a real scenario, this would be sent to a server)
+            alert(`Product Name: ${productName}\nDescription: ${productDescription}\nPrice: ${productPrice}\nImage URL: ${productImage}`);
+
+            // Here you could send the data to a backend server using fetch or another method
+            // Example:
+            // fetch('/api/products', {
+            //     method: 'POST',
+            //     body: JSON.stringify({
+            //         name: productName,
+            //         description: productDescription,
+            //         price: productPrice,
+            //         image: productImage
+            //     }),
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // }).then(response => {
+            //     if (response.ok) {
+            //         alert('Product listed successfully!');
+            //     } else {
+            //         alert('Failed to list the product. Please try again.');
+            //     }
+            // });
         });
     </script>
 </body>
 </html>
+
