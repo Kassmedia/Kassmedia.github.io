@@ -52,17 +52,17 @@ Here's how you can use the Oja Agbe Harvestify platform:
    * [Screenshot of Product Listing Page]
 
 3. **Consumer Search and Purchase**: Consumers browse listings, filter by location, product type, or price, and place orders directly with farmers.
-   * [Screenshot of Consumer Search and Product Details Page]
+   * [Screenshot of Consumer Search and Product Details Page] (upcoming) 
 
 4. **Secure Payments**: Oja Agbe Harvestify integrates a secure payment gateway to facilitate seamless transactions between farmers and consumers.
-   * [Screenshot of Payment Gateway Integration]
+   * [Screenshot of Payment Gateway Integration] (upcoming)
 
 5. **Logistics Support**: If the platform offers logistics assistance, this feature helps with coordinating delivery from farmers to consumers.
-   * [Screenshot of Logistics Support Page]
+   * [Screenshot of Logistics Support Page] (upcoming)
 
----
 
-### **Contributing**
+
+**Contributing**
 
 We welcome contributions from developers, designers, and agricultural experts to make Oja Agbe Harvestify even better. Here's how you can contribute:
 
@@ -72,14 +72,10 @@ We welcome contributions from developers, designers, and agricultural experts to
 
 Feel free to also contribute ideas, suggestions, or enhancements to improve the platform.
 
----
 
-### **Related Projects**
+**Related Projects**
 
 * **Farmcrowdy**: [https://farmcrowdy.com/](https://farmcrowdy.com/)
 * **Thrive Agric**: [https://www.thriveagric.com/](https://www.thriveagric.com/)
 * **Hello Tractor**: [https://hellotractor.com/](https://hellotractor.com/)
 
----
-
-This version mentions **Django** as the web framework used, explaining why it was chosen without including the installation steps.
